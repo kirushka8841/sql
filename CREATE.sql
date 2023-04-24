@@ -44,3 +44,4 @@ create table if not exists TrackCollection(
 	Collection_id INTEGER references Collection(id),
 	CONSTRAINT PK_TrackCollection PRIMARY KEY (track_id, collection_id)
 );
+
