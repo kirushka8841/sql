@@ -33,6 +33,12 @@ create table if not exists Track(
 	Album_id INTEGER REFERENCES Album(id)
 );
 
+create table if not exists TrackAlbum(
+	Track_id INTEGER REFERENCES Track(id)
+	Album_id INTEGER REFERENCES Album(id)
+	CONSTRAINT PK_TrackAlbum PRIMARY KEY (track_id, album_id)
+);
+
 create table if not exists Collection(
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(40) NOT null,
