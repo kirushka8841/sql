@@ -29,14 +29,8 @@ create table if not exists ArtistAlbum(
 create table if not exists Track(
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(60) NOT null,
-	duration INTEGER not null,
-	Album_id INTEGER REFERENCES Album(id)
-);
-
-create table if not exists TrackAlbum(
-	Track_id INTEGER REFERENCES Track(id)
-	Album_id INTEGER REFERENCES Album(id)
-	CONSTRAINT PK_TrackAlbum PRIMARY KEY (track_id, album_id)
+	duration numeric not null,
+	album_id integer not null references Album(id)
 );
 
 create table if not exists Collection(
