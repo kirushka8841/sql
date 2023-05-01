@@ -1,4 +1,4 @@
-INSERT INTO artist(id, name) 
+INSERT INTO artists(id, artist_name) 
 VALUES('1', 'Скриптонит'),
 	  ('2', 'Markul'),
 	  ('3', 'Boris Brecha'),
@@ -10,14 +10,14 @@ VALUES('1', 'Скриптонит'),
 	  ('9', 'Kizaru'),
 	  ('10', 'Мияги');
 	  
-INSERT INTO genre(id, name) 
+INSERT INTO genres(id, genre_name) 
 VALUES('1', 'Rap'),
 	  ('2', 'Hip-Hop'),
 	  ('3', 'Pop'),
 	  ('4', 'Electro'),
 	  ('5', 'Rock');
 	 
-INSERT INTO genreartist(genre_id, artist_id)
+INSERT INTO genres_artists(genres_id, artists_id)
 VALUES(2, 1),
 	  (3, 2),
 	  (4, 3),
@@ -29,7 +29,7 @@ VALUES(2, 1),
 	  (1, 9),
 	  (2, 10);
 	  
-INSERT into album(id, name, year_)
+INSERT into albums(id, album_name, album_date)
 VALUES('1', 'Свистки и бумажки', '2021'),
       ('2', 'Great Depression', '2018'),
       ('3', 'Space Diver', '2020'),
@@ -41,7 +41,7 @@ VALUES('1', 'Свистки и бумажки', '2021'),
       ('9', 'Bandana', '2021'),
       ('10', 'Hajime', '2016');
      
-INSERT INTO artistalbum(artist_id, album_id)
+INSERT INTO albums_artists(albums_id, artists_id)
 VALUES(1, 1),
 	  (2, 2),
 	  (3, 3),
@@ -53,29 +53,29 @@ VALUES(1, 1),
 	  (9, 9),
 	  (10, 10);
     
-INSERT into track(id, name, duration)
-VALUES('1', 'Рамок нет', 4.50),
-	  ('2', 'Жить как я живу', 3.37),
-	  ('3', 'Компас', 3.03),
-	  ('4', 'Серпантин', 3.06),
-	  ('5', 'Space Diver', 6.37),
-	  ('6', 'Space Diver2', 10.12),
-	  ('7', 'Лавэ', 2.30),
-	  ('8', 'ХХХ', 1.57),
-	  ('9', 'Дыхание', 3.39),
-	  ('10', 'Русский рок', 4.24),
-	  ('11', 'Проблемы', 2.10),
-	  ('12', 'Не нравится', 2.22),
-	  ('13', 'Одуванчик', 3.03),
-	  ('14', 'Повторим', 2.36),
-	  ('15', 'Gimme The Loot', 2.09),
-	  ('16', '98 Flow', 2.13),
-	  ('17', '99 Problems', 2.40),
-	  ('18', 'Mama Makusa', 1.54),
-	  ('19', 'Mynor', 2.55),
-	  ('20', 'Там ревели горы', 2.56);
+INSERT into tracks(id, track_name, track_duration, album_id)
+VALUES('1', 'Рамок нет', 4.50, 1),
+	  ('2', 'Жить как я живу', 3.37, 1),
+	  ('3', 'Компас', 3.03, 2),
+	  ('4', 'Серпантин', 3.06, 2),
+	  ('5', 'Space Diver', 6.37, 3),
+	  ('6', 'Space Diver2', 10.12, 3),
+	  ('7', 'Лавэ', 2.30, 4),
+	  ('8', 'ХХХ', 1.57, 4),
+	  ('9', 'Дыхание', 3.39, 5),
+	  ('10', 'Русский рок', 4.24, 5),
+	  ('11', 'Проблемы', 2.10, 6),
+	  ('12', 'Не нравится', 2.22, 6),
+	  ('13', 'Одуванчик', 3.03, 7),
+	  ('14', 'Повторим', 2.36, 7),
+	  ('15', 'Gimme The Loot', 2.09, 8),
+	  ('16', '98 Flow', 2.13, 8),
+	  ('17', '99 Problems', 2.40, 9),
+	  ('18', 'Mama Makusa', 1.54, 9),
+	  ('19', 'Mynor', 2.55, 10),
+	  ('20', 'Там ревели горы', 2.56, 10);
 	 
-INSERT into collection(id, name, year_)
+INSERT into collections(id, collection_name, collection_date)
 VALUES('1', 'Сборник 1', '2023'),
 	  ('2', 'Сборник 2', '2022'),
 	  ('3', 'Сборник 3', '2021'),
@@ -85,7 +85,7 @@ VALUES('1', 'Сборник 1', '2023'),
 	  ('7', 'Сборник 7', '2017'),
 	  ('8', 'Сборник 8', '2016');
 	 
-INSERT INTO trackcollection(track_id, collection_id)
+INSERT INTO tracks_collections(track_id, collection_id)
 VALUES(1, 4),
 	  (2, 5),
 	  (3, 1),
@@ -102,6 +102,3 @@ VALUES(1, 4),
 	  (17, 6),
 	  (18, 7),
 	  (19, 8);
-	 
-
-
