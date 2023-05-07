@@ -6,8 +6,7 @@ SELECT g.genre_name, count(ga.artists_id) FROM genres g
 --Количество треков, вошедших в альбомы 2019–2020 годов.
 SELECT al.album_name, al.album_date , count(t.id) FROM albums al
    JOIN tracks t ON al.id = t.album_id
-   WHERE al.album_date BETWEEN 2019 and 2020
-   GROUP BY al.album_name, al.album_date;
+   WHERE al.album_date BETWEEN 2019 and 2020;
    
 --Средняя продолжительность треков по каждому альбому.
 SELECT al.album_name, AVG(t.track_duration) FROM albums al
@@ -18,7 +17,7 @@ SELECT al.album_name, AVG(t.track_duration) FROM albums al
 SELECT ar.artist_name FROM artists ar
    JOIN albums_artists aa ON ar.id = aa.artists_id
    JOIN albums a ON a.id = aa.albums_id
-   WHERE a.album_date < 2020; 
+   WHERE a.album_date = 2020; 
   
 --Названия сборников, в которых присутствует конкретный исполнитель (выберите его сами).
 SELECT c.collection_name FROM collections c
